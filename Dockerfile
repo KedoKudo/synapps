@@ -196,5 +196,5 @@ RUN make -j4 all && make install
 WORKDIR ${SUPPORT}
 
 # --- Dev ---
-# docker build -t kedokudo/synapp:latest .
-# docker run -it --rm kedokudo/synapp:latest /bin/bash
+# docker build -t kedokudo/synapps:latest .
+# docker run -it --rm kedokudo/synapps:latest /bin/bash
