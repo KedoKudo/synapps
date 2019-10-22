@@ -46,6 +46,7 @@ RUN sed -i sz'EPICS_BASE=/APSshare/epics/base-3.15.6'z'EPICS_BASE=${EPICS_ROOT}'
 # No need for building these for virtual_beamline@linux-x86_64
 RUN sed -i s/'ALLENBRADLEY='/'#ALLENBRADLEY='/g         assemble_synApps.sh && \
     sed -i s:'AREA_DETECTOR=':'#AREA_DETECTOR=':g       assemble_synApps.sh && \
+    sed -i s:'ASYN=R4-36':'ASYN=R4-37':g                assemble_synApps.sh && \
     sed -i s/'CAMAC='/'#CAMAC='/g                       assemble_synApps.sh && \
     sed -i s/'DAC128V='/'#DAC128V='/g                   assemble_synApps.sh && \
     sed -i s/'DELAYGEN='/'#DELAYGEN='/g                 assemble_synApps.sh && \
@@ -102,7 +103,7 @@ RUN ln -s ${XXX}/iocBoot/iocxxx/ ./iocxxx
 ENV AREA_DETECTOR=${SUPPORT}/areaDetector-R3-8
 
 # download components
-ADD https://github.com/areaDetector/areaDetector/archive/R3-7.tar.gz ./areaDetector-R3-8.tar.gz
+ADD https://github.com/areaDetector/areaDetector/archive/R3-8.tar.gz ./areaDetector-R3-8.tar.gz
 RUN \
     tar xzf areaDetector-R3-8.tar.gz && \
     /bin/rm areaDetector-R3-8.tar.gz && \
